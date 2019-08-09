@@ -41,9 +41,6 @@ source-repository head
 import Distribution.Simple
 main = defaultMain
 
-{-# START_FILE test/Spec.hs #-}
-{-# OPTIONS_GHC -F -pgmF hspec-discover #-}
-
 {-# START_FILE LICENSE #-}
 Copyright {{author-name}}{{^author-name}}Author name here{{/author-name}} (c) {{year}}{{^year}}2019{{/year}}
 
