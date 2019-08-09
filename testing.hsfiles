@@ -25,7 +25,7 @@ library
 test-suite {{name}}-test
   type:                exitcode-stdio-1.0
   hs-source-dirs:      tests
-  main-is              tests.hs
+  main-is:             tests.hs
   build-depends:       base
                      , {{name}}
                      , hspec
