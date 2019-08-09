@@ -24,7 +24,8 @@ library
 
 test-suite {{name}}-test
   type:                exitcode-stdio-1.0
-  hs-source-dirs:      test
+  hs-source-dirs:      tests
+  main-is              tests.hs
   build-depends:       base
                      , {{name}}
                      , hspec
@@ -40,6 +41,18 @@ source-repository head
 import Distribution.Simple
 main = defaultMain
 
+{-# START_FILE tests/tests.hs #-}
+module Main where
+
+import Test.Hspec
+import Test.QuickCheck
+
+main :: IO ()
+main = hspec $ 
+  describe "Test" do
+    it "x + 1 is always greater than x" $ 
+      property $ (\x -> x + 1 > x :: Int)
+    
 {-# START_FILE LICENSE #-}
 Copyright {{author-name}}{{^author-name}}Author name here{{/author-name}} (c) {{year}}{{^year}}2019{{/year}}
 
